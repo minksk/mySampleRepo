@@ -8,24 +8,27 @@ import org.junit.jupiter.api.Test;
 
 class Test_TEXTTOLIST {
 
+	
+
+	
+
 	@Test
-	void test() throws FileNotFoundException {
+	void testList1() throws FileNotFoundException {
+		//Tests if List 1 populates as expected
 		MostCommonWords mcw=new MostCommonWords();
 		mcw.textToList("smallSample.txt");
-		ArrayList<String> actual=new ArrayList();
-		actual=mcw.getList1();
+		ArrayList<String> actual=mcw.getList1();
 		ArrayList<String> compare= new ArrayList();
-		compare.add("The");
+		compare.add("the");
 		compare.add("cat");
 		compare.add("jumped");
 		compare.add("over");
 		compare.add("the");
 
-		//TODO figure out why this assertion isn't working
+		
 		assertEquals(compare.get(1), actual.get(1));
 		assertEquals(compare.get(2), actual.get(2));
+		assertEquals(compare.get(0), actual.get(0));
 	}
-	void test1()throws FileNotFoundException {
-		//This will test that things are populating to List2 as expected.
-	}
+	
 }

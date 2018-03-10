@@ -127,9 +127,14 @@ public void textToList(String text) throws FileNotFoundException {
 		String wordToAdd=b.next();
 		System.out.println("Next in file: "+wordToAdd+currentWord);
 		
-		List1.add(wordToAdd);
+		List1.add(wordToAdd.toLowerCase());
 		currentWord++;
 	}
+	currentList++;
+	
+}
+public void removeStopWords() {
+	
 }
 public void removePunctuation() {
 	
