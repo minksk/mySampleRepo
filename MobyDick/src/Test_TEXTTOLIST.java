@@ -22,8 +22,8 @@ class Test_TEXTTOLIST {
 		compare.add("the");
 
 		//TODO figure out why this assertion isn't working
-		assert(compare.get(1)==actual.get(1));
-		assert(compare.get(2)==actual.get(2));
+		assertEquals(compare.get(1), actual.get(1));
+		assertEquals(compare.get(2), actual.get(2));
 	}
 	void test1()throws FileNotFoundException {
 		//This will test that things are populating to List2 as expected.

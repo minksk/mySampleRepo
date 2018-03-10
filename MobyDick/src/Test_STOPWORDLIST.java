@@ -10,8 +10,8 @@ class Test_STOPWORDLIST {
 	void test() throws FileNotFoundException {
 		MostCommonWords mcw= new MostCommonWords();
 		mcw.createStopList();
-		assert(mcw.getStopWords(0)=="a");
-		assert(mcw.getStopWords(1)=="about");
+		assertEquals(mcw.getStopWords(0), "a");
+		assertEquals(mcw.getStopWords(1), "about");
 	}
 
 }
