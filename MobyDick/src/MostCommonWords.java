@@ -116,21 +116,42 @@ public int countWords() throws FileNotFoundException {
 	int wordCount=0;
 		return wordCount;
 }
+private void populatingLists() {
+	
+}
 public void textToList(String text) throws FileNotFoundException {
-	Scanner b= new Scanner(new File("smallSample.txt"));
+	Scanner b= new Scanner(new File(text));
 	int maxPerList=2461;
 	int numOfLists=7;
 	int currentList=1;
 	int currentWord=1;
+	int maxForThisList=currentList*maxPerList;
 	
-	while(b.hasNext()&& currentList<maxPerList ) {
-		String wordToAdd=b.next();
-		System.out.println("Next in file: "+wordToAdd+currentWord);
-		
+	while(b.hasNext()&& currentWord<maxPerList ) {
+		String wordToAdd=b.next();	
 		List1.add(wordToAdd.toLowerCase());
 		currentWord++;
 	}
 	currentList++;
+	while (b.hasNext()&& currentWord<maxForThisList) {
+		String wordToAdd=b.next();
+		List2.add(wordToAdd.toLowerCase());
+		System.out.println(wordToAdd.toLowerCase()+" " +currentWord);
+		currentWord++;
+		
+	}
+	currentList++;
+	while (b.hasNext()&& currentWord< maxForThisList) {
+		String wordToAdd=b.next();
+		List3.add(wordToAdd.toLowerCase());
+		currentWord++;
+	}
+	currentList++;
+	while(b.hasNext()&&currentWord<maxForThisList) {
+		String wordToAdd=b.next();
+		List4.add(wordToAdd.toLowerCase());
+		currentWord++;
+	}
 	
 }
 public void removeStopWords() {
@@ -139,9 +160,7 @@ public void removeStopWords() {
 public void removePunctuation() {
 	
 }
-public void changeToLowerCase() {
-	
-}
+
 public void order() {
 	
 }

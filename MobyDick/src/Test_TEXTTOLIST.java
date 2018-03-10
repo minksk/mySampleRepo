@@ -10,8 +10,6 @@ class Test_TEXTTOLIST {
 
 	
 
-	
-
 	@Test
 	void testList1() throws FileNotFoundException {
 		//Tests if List 1 populates as expected
@@ -30,5 +28,8 @@ class Test_TEXTTOLIST {
 		assertEquals(compare.get(2), actual.get(2));
 		assertEquals(compare.get(0), actual.get(0));
 	}
+
+
+	
 	
 }
