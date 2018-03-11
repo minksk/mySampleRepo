@@ -116,48 +116,73 @@ public int countWords() throws FileNotFoundException {
 	int wordCount=0;
 		return wordCount;
 }
-private void populatingLists() {
-	
-}
+
 public void textToList(String text) throws FileNotFoundException {
 	Scanner b= new Scanner(new File(text));
-	int maxPerList=2461;
+	int maxPerList=2463;
 	int numOfLists=7;
 	int currentList=1;
-	int currentWord=1;
-	int maxForThisList=currentList*maxPerList;
+	int currentWord=0;
+	int maxForThisList=maxPerList;
 	
-	while(b.hasNext()&& currentWord<maxPerList ) {
+	while(b.hasNext()&& currentWord<=maxPerList ) {
 		String wordToAdd=b.next();	
-		List1.add(wordToAdd.toLowerCase());
+		wordToAdd=wordToAdd.replaceAll("[^A-Za-z]", "").toLowerCase();
+		List1.add(wordToAdd);
+		//System.out.println(wordToAdd);
 		currentWord++;
 	}
-	currentList++;
+	
+	maxForThisList=maxPerList+maxPerList;
 	while (b.hasNext()&& currentWord<maxForThisList) {
 		String wordToAdd=b.next();
-		List2.add(wordToAdd.toLowerCase());
-		System.out.println(wordToAdd.toLowerCase()+" " +currentWord);
+		wordToAdd=wordToAdd.replaceAll("[^A-Za-z]", "").toLowerCase();
+		List2.add(wordToAdd);
 		currentWord++;
-		
 	}
-	currentList++;
+	
+	maxForThisList=maxForThisList+maxPerList;
 	while (b.hasNext()&& currentWord< maxForThisList) {
 		String wordToAdd=b.next();
-		List3.add(wordToAdd.toLowerCase());
+		wordToAdd=wordToAdd.replaceAll("[^A-Za-z]", "").toLowerCase();
+		List3.add(wordToAdd);
 		currentWord++;
 	}
-	currentList++;
+	
+	maxForThisList=maxForThisList+maxPerList;
 	while(b.hasNext()&&currentWord<maxForThisList) {
 		String wordToAdd=b.next();
-		List4.add(wordToAdd.toLowerCase());
+		wordToAdd=wordToAdd.replaceAll("[^A-Za-z]", "").toLowerCase();
+		List4.add(wordToAdd);
 		currentWord++;
 	}
 	
+
+	maxForThisList=maxForThisList+maxPerList;
+	while(b.hasNext()&&currentWord<maxForThisList) {
+		String wordToAdd=b.next();
+		wordToAdd=wordToAdd.replaceAll("[^A-Za-z]", "").toLowerCase();
+		List5.add(wordToAdd.toLowerCase());
+		currentWord++;
+	}
+	
+	maxForThisList=maxForThisList+maxPerList;
+	while(b.hasNext()&&currentWord<maxForThisList) {
+		String wordToAdd=b.next();
+		wordToAdd=wordToAdd.replaceAll("[^A-Za-z]", "").toLowerCase();
+		List6.add(wordToAdd.toLowerCase());
+		currentWord++;
+	}
+	
+	maxForThisList=maxForThisList+maxPerList;
+	while(b.hasNext()&&currentWord<maxForThisList) {
+		String wordToAdd=b.next();
+		wordToAdd=wordToAdd.replaceAll("[^A-Za-z]", "").toLowerCase();
+		List7.add(wordToAdd);
+		currentWord++;
+	}
 }
 public void removeStopWords() {
-	
-}
-public void removePunctuation() {
 	
 }
 

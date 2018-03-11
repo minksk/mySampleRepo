@@ -11,24 +11,16 @@ class Test_LIST6POP {
 	@Test
 	void testList6() throws FileNotFoundException {
 		//Testing List 6
-		String text="testText1.txt";
+		String text="popTest.txt";
 		MostCommonWords test=new MostCommonWords();
 		test.textToList(text);
 		ArrayList<String>actual=test.getList6();
 		ArrayList<String>compare= new ArrayList();
-		compare.add("hardship");
-		compare.add("passage");
-		compare.add("enlarge");
-		compare.add("smart");
-		compare.add("trustee");
-		compare.add("crackpot");
-		compare.add("soak");
-		compare.add("fist");
-		compare.add("keep");
-		compare.add("pan");
-		compare.add("vessel");
-		compare.add("lift");
-		compare.add("bring");
+		
+		compare.add("abada");
+		compare.add("abaddon");
+		compare.add("abaddon");
+
 		compare.add("population");
 		assertEquals(compare.get(0), actual.get(0));
 		assertEquals(compare.get(1), actual.get(1));

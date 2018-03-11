@@ -12,7 +12,6 @@ class Test_ORDER {
 		MostCommonWords test= new MostCommonWords();
 		test.createStopList();
 		test.textToList("smallSample.txt");
-		test.removePunctuation();
 		test.removeStopWords();
 		test.order();
 		ArrayList<String>actual=test.getList1();

@@ -12,7 +12,6 @@ class Test_REMOVESTOPWORDS {
 	void test() throws FileNotFoundException {
 		MostCommonWords test=new MostCommonWords();
 		test.textToList("smallSample.txt");
-		test.removePunctuation();
 		test.removeStopWords();
 		ArrayList<String>actual=test.getList1();
 		ArrayList<String>compare=new ArrayList();
