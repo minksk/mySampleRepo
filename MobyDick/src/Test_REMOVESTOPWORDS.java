@@ -11,15 +11,15 @@ class Test_REMOVESTOPWORDS {
 	@Test
 	void test() throws FileNotFoundException {
 		MostCommonWords test=new MostCommonWords();
+		test.createStopList();
 		test.textToList("smallSample.txt");
 		test.removeStopWords();
 		ArrayList<String>actual=test.getList1();
 		ArrayList<String>compare=new ArrayList();
 		compare.add("cat");
 		compare.add("jumped");
-		compare.add("over");
 		compare.add("hat");
-		assertEquals(compare.get(1), actual.get(1));
+		assertEquals(compare.get(0), actual.get(0));
 	}
 
 }

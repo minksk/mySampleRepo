@@ -7,13 +7,14 @@ public class Tester1 {
 		MostCommonWords test = new MostCommonWords();
 		test.createStopList();
 		test.textToList("smallSample.txt");
-		ArrayList<String>List=test.getList1();
-		for (int i=0;i<List.size();i++) {
-			System.out.println(i+" "+List.get(i));
+		test.removeStopWords();
+		test.order();
+		ArrayList<String>words=test.getList1();
+		ArrayList<String>storage=test.getFinalList();
+		ArrayList<Integer>numList=test.getNumOfOccurences();
+		for(int i=0; i<storage.size();i++) {
+			System.out.println(storage.get(i)+" "+numList.get(i));
 		}
-		
-		
-		
 
 	}
 

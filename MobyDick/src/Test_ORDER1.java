@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 
-class Test_ORDER {
+class Test_ORDER1 {
 
 	@Test
 	void test() throws FileNotFoundException {
@@ -14,15 +14,15 @@ class Test_ORDER {
 		test.textToList("smallSample.txt");
 		test.removeStopWords();
 		test.order();
-		ArrayList<String>actual=test.getList1();
+		ArrayList<String>actual=test.getFinalList();
 		ArrayList<String>compare=new ArrayList();
 		compare.add("cat");
 		compare.add("jumped");
-		compare.add("over");
+		
 		
 		assertEquals(actual.get(0), compare.get(0));
 		assertEquals(actual.get(1), compare.get(1));
-		assertEquals(actual.get(2), compare.get(2));
+		
 	}
 
 }
