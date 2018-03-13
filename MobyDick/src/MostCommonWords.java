@@ -1,4 +1,5 @@
 import java.io.File;
+import java.awt.List;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.lang.reflect.Array;
@@ -248,7 +249,7 @@ public class MostCommonWords {
 				System.out.println("This list does not exist");
 				break;
 			}
-
+			//populating final List and numOfOccurences 
 			for (int n = 0; n < listInUse.size(); n++) {
 				if (finalList.size() != 0) {
 					if(finalList.contains(listInUse.get(n))) {
@@ -266,6 +267,41 @@ public class MostCommonWords {
 			}
 
 		}
-		//Start sorting of final list and number of occurrences here
+	}
+	public void sort() {
+		int in, out;
+		int temp;
+		String temp2;
+		int nElems=numOfOccurences.size();
+		int numToShift;
+		String wordToShift;
+		for (out = 0; out < nElems; out++) // out is dividing line
+		{
+			temp = numOfOccurences.get(out); // remove marked item
+			temp2=finalList.get(out);
+			
+			in = out; 
+			while (in >0 && numOfOccurences.get(in-1) > temp) // until one is smaller,
+			{	//This is where my problem is...  Please help!
+				numToShift=numOfOccurences.get(in-1);
+				wordToShift=finalList.get(in-1);
+				System.out.println(numToShift+" "+wordToShift+" "+in);
+				numOfOccurences.set(in, numToShift); // shift item to right
+				finalList.set(in, wordToShift);
+				--in; // go left one position
+				
+			}
+			//System.out.println(temp+" "+temp2);
+			numOfOccurences.set(in, temp);// insert marked item
+			finalList.set(in, temp2);
+			//System.out.println(finalList.toString());
+			//System.out.println(numOfOccurences.toString());
+			
+		} // end for
+
+			
+	}
+	public void alphabetize() {
+		
 	}
 }

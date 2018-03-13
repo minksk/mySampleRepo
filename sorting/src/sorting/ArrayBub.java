@@ -56,9 +56,9 @@ class BubbleSortApp {
 		  long n = (long)( java.lang.Math.random()*(maxSize-1) );
 		  arr.insert(n);
 		}
-		//arr.display(); // display items
+		arr.display(); // display items
 		arr.bubbleSort(); // bubble sort them
-		//arr.display(); // display them again
+		arr.display(); // display them again
 		System.out.println(System.nanoTime());//outputs time
 	} // end main()
 } // end class BubbleSortApp

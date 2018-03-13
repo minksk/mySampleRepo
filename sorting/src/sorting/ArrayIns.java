@@ -1,9 +1,4 @@
-package sorting;
-
-//insertSort.java
-//demonstrates insertion sort
-//to run this program: C>java InsertSortApp
-//--------------------------------------------------------------
+package sorting;	
 class ArrayIns {
 	private long[] a; // ref to array a
 	private int nElems; // number of data items
@@ -52,18 +47,22 @@ class ArrayIns {
 
 class InsertSortApp {
 	public static void main(String[] args) {
-		int maxSize = 100000; // array size
+		int maxSize = 100; // array size
 		ArrayIns arr; // reference to array
 		arr = new ArrayIns(maxSize); // create the array
-		for(int j=0; j<maxSize; j++) // fill array with
-		{ // random numbers
-		  long n = (long)( java.lang.Math.random()*(maxSize-1) );
-		  arr.insert(n);
-		}
-		//arr.display(); // display items
+		arr.insert(77); // insert 10 items
+		arr.insert(99);
+		arr.insert(44);
+		arr.insert(55);
+		arr.insert(22);
+		arr.insert(88);
+		arr.insert(11);
+		arr.insert(00);
+		arr.insert(66);
+		arr.insert(33);
+		arr.display(); // display items
 		arr.insertionSort(); // insertion-sort them
-		///arr.display(); // display them again
-		System.out.println(System.nanoTime());
+		arr.display(); // display them again
 	} // end main()
 } // end class InsertSortApp
 	////////////////////////////////////////////////////////////////
