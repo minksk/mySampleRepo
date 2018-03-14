@@ -8,7 +8,7 @@ class Test_STOPWORDLIST {
 
 	@Test
 	void test() throws FileNotFoundException {
-		MostCommonWords mcw= new MostCommonWords();
+		MostCommonWords2 mcw= new MostCommonWords2();
 		mcw.createStopList();
 		assertEquals(mcw.getStopWords(0), "a");
 		assertEquals(mcw.getStopWords(1), "about");

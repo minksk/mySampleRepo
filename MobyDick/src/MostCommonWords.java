@@ -275,20 +275,21 @@ public class MostCommonWords {
 		int nElems=numOfOccurences.size();
 		int numToShift;
 		String wordToShift;
-		for (out = 0; out < nElems; out++) // out is dividing line
+	
+		for (out = nElems; out > nElems; out--) // out is dividing line
 		{
 			temp = numOfOccurences.get(out); // remove marked item
 			temp2=finalList.get(out);
 			
 			in = out; 
-			while (in >0 && numOfOccurences.get(in-1) > temp) // until one is smaller,
+			while (in <nElems && numOfOccurences.get(in+1) > temp) // until one is smaller,
 			{	//This is where my problem is...  Please help!
-				numToShift=numOfOccurences.get(in-1);
-				wordToShift=finalList.get(in-1);
+				numToShift=numOfOccurences.get(in+1);
+				wordToShift=finalList.get(in+1);
 				System.out.println(numToShift+" "+wordToShift+" "+in);
 				numOfOccurences.set(in, numToShift); // shift item to right
 				finalList.set(in, wordToShift);
-				--in; // go left one position
+				++in; // go left one position
 				
 			}
 			//System.out.println(temp+" "+temp2);
@@ -301,7 +302,5 @@ public class MostCommonWords {
 
 			
 	}
-	public void alphabetize() {
-		
-	}
+
 }
