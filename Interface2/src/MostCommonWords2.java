@@ -1,5 +1,11 @@
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -14,6 +20,21 @@ public class MostCommonWords2 {
 	HashMap<String, Integer> hmap = new HashMap<String, Integer>();
 	HashMap<String, Integer> final10 = new HashMap<String, Integer>();
 	private int topNum = 10;
+	public int wordCount=0;
+	
+	/**
+	 * @param textPath the textPath to set
+	 */
+	public void setTextPath(String textPath) {
+		this.textPath = textPath;
+	}
+
+	/**
+	 * @param stopWords the stopWords to set
+	 */
+	public void setStopWords(ArrayList<String> stopWords) {
+		this.stopWords = stopWords;
+	}
 
 	/**
 	 * @return the textPath
@@ -72,26 +93,34 @@ public class MostCommonWords2 {
 		s.close();
 	}
 
-	public void toHashMap(String textPath) throws FileNotFoundException {
-		Scanner b = new Scanner(new File(textPath));
+	public void toHashMap(String textPath) throws IOException {
+		
+		Scanner b = new Scanner (new FileReader(new File(textPath)));
 		while (b.hasNext()) {
+			wordCount++;
 			String word = b.next();
-			word = word.replaceAll(""
-					+ "[^A-Za-z]$", "").toLowerCase();
+			word = word.replaceAll("[^A-Za-z]", "").toLowerCase();
+			if(word.equals("")) {
+				continue;
+			}
 
-			if (stopWords.indexOf(word) <= 0) {
+			if (!stopWords.contains(word)) {
 				if (hmap.containsKey(word)) {
 					int value = hmap.get(word);
 					value++;
-					hmap.replace(word, value);
-				} else {
+					hmap.put(word, value);
+				} 
+				else 
+				{
 					hmap.put(word, 1);
-
 				}
-
+			}
+				
+			else {
+					continue;
+				}
 			}
 
-		}
 	}
 
 	public void top10words() {
@@ -104,9 +133,14 @@ public class MostCommonWords2 {
 
 				}
 			}
-			System.out.println(maxEntry);
+
 			final10.put(maxEntry.getKey(), maxEntry.getValue());
 			hmap.replace(maxEntry.getKey(), 0);
 		}
+	}
+	public void main() throws IOException {
+		createStopList();
+		toHashMap(textPath);
+		top10words();
 	}
 }

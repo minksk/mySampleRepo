@@ -7,17 +7,15 @@ import java.util.Map;
 public class Tester1 {
 
 	public static void main(String[] args) throws FileNotFoundException {
-		MostCommonWords test = new MostCommonWords();
+		MostCommonWords2 test = new MostCommonWords2();
 		test.createStopList();
-		//test.textToList("smallSample.txt");
+		test.toHashMap("smallSample.txt");
+		//test.removeStopWords();
 		
-		test.removeStopWords();
-		ArrayList<String>list=test.getList1();
-				
-	for (int i=0;i<list.size();i++) {
-		System.out.println(list.get(i));
-	}
+		HashMap<String, Integer>map= test.getHmap();
 		
+	
+			System.out.println(map.entrySet());
 	
 		//test.sort();
 		System.out.println("///////////////////post sort");

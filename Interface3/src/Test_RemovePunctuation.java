@@ -1,15 +1,15 @@
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.HashMap;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class Test_REMOVEPUNCTUATION {
+public class Test_RemovePunctuation {
 
 	@Test
-	void test() throws FileNotFoundException {
+	public void test() throws IOException {
 		MostCommonWords2 test= new MostCommonWords2();
 		test.createStopList();
 		test.toHashMap("smallSample.txt");
